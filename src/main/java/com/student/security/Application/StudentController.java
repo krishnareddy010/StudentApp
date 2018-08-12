@@ -27,6 +27,13 @@ public class StudentController {
 	}
 	
 	@GetMapping
+	@RequestMapping(value="/test")
+	public ResponseEntity< String> test(){
+		return new ResponseEntity<>( "Hello World....!!!!",HttpStatus.OK);
+		
+	}
+	
+	@GetMapping
 	@RequestMapping(value="/students/{sid}")
 	public ResponseEntity<Student> getStudent(@PathVariable Integer sid){
 		return new ResponseEntity<>( getStudentById(sid),HttpStatus.OK);
